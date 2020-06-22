@@ -26,8 +26,12 @@ public class ProductManager {
     private CategoryConverter categoryConverter;
 
     public ProductDto addProduct(ProductDto productDto) {
-        Product product = productService.save(productConverter.toEntity(productDto));
-        return productConverter.toDto(product);
+        if (productDto.getCategory() != null && productDto.getCategory().getId() > 0) {
+            Product product = productService.save(productConverter.toEntity(productDto));
+            return productConverter.toDto(product);
+        } else {
+            throw new NotFoundException("category");
+        }
     }
 
     public ProductDto getProduct(long id) {

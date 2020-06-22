@@ -58,6 +58,7 @@ public class ProductController {
     @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     @ApiOperation(value = "Product Update Operation")
     public ResponseEntity<ProductDto> update(@PathVariable("id") long id, @RequestBody ProductDto productDto) {
+        System.out.println("eee");
         return new ResponseEntity<>(productManager.updateProduct(productDto, id), HttpStatus.OK);
     }
 

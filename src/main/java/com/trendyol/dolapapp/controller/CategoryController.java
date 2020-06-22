@@ -1,7 +1,6 @@
 package com.trendyol.dolapapp.controller;
 
 import com.trendyol.dolapapp.dto.CategoryDto;
-import com.trendyol.dolapapp.dto.ProductDto;
 import com.trendyol.dolapapp.exception.ResourceAlreadyHaveException;
 import com.trendyol.dolapapp.manager.CategoryManager;
 import io.swagger.annotations.Api;
@@ -25,7 +24,7 @@ public class CategoryController {
     private CategoryManager categoryManager;
 
     @PostMapping("/save")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<?> save(@Valid @RequestBody CategoryDto categoryDto) {
 
         if (Optional.ofNullable(categoryManager.findByName(categoryDto.getName())).isPresent())
