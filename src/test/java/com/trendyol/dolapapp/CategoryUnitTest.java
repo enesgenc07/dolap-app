@@ -12,7 +12,7 @@ import static org.springframework.test.util.AssertionErrors.assertNotNull;
 import static org.springframework.test.util.AssertionErrors.assertTrue;
 
 @SpringBootTest
-public class CategoryController {
+public class CategoryUnitTest {
 
     @Autowired
     private CategoryManager categoryManager;

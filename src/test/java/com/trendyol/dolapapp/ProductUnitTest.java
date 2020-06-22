@@ -17,7 +17,7 @@ import static org.springframework.test.util.AssertionErrors.assertNotNull;
 import static org.springframework.test.util.AssertionErrors.assertTrue;
 
 @SpringBootTest
-public class ProductController {
+public class ProductUnitTest {
 
     @Autowired
     private ProductManager productManager;
