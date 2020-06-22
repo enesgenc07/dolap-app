@@ -39,7 +39,7 @@ public class CategoryController {
     @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     @ApiOperation(value = "Get Category List Operation", response = CategoryDto.class)
     public ResponseEntity<?> retriveAllCategories() {
-        return new ResponseEntity<>(categoryManager.getAllProducts(), HttpStatus.OK);
+        return new ResponseEntity<>(categoryManager.getAllCategory(), HttpStatus.OK);
     }
 
 }

@@ -28,7 +28,7 @@ public class CategoryManager {
     }
 
 
-    public List<CategoryDto> getAllProducts() {
+    public List<CategoryDto> getAllCategory() {
         return categoryConverter.toDto(categoryService.findAll());
     }
 }
